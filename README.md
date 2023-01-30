@@ -1,6 +1,8 @@
-#
+# gRPC client
+First, setup any gRPC server with the same proto and serving the called method. Then, setup the client(this repo):
 
-# Docker Envoy
-docker pull envoyproxy/envoy:v1.25-latest
+- npm install
+- npm run envoy
+- npm run dev
 
-docker run -v $(pwd)/envoy.yaml:/etc/envoy/envoy.yaml -e ENVOY_UID=$(id -u) envoyproxy/envoy:v1.25-latest
+Open `localhost:1234` and watch browser console.

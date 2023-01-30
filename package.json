@@ -2,9 +2,11 @@
   "name": "duna-cloud-processing-client",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "source": "index.html",
   "scripts": {
-    "dev": "vite --host",
+    "dev": "parcel",
+    "build": "parcel build",
+    "envoy": "./start_envoy.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,23 +16,17 @@
     "@grpc/proto-loader": "^0.7.4",
     "goog": "^0.2.1",
     "google-protobuf": "^3.21.2",
+    "grpc_tools_node_protoc_ts": "^5.3.2",
+    "grpc-tools": "^1.12.3",
     "grpc-web": "^1.4.2",
     "typescript": "^4.9.4",
-    "vite": "^4.0.4",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^22.0.2",
-    "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^13.3.0",
-    "@rollup/plugin-typescript": "^8.3.4",
+    "@types/google-protobuf": "^3.15.6",
     "@types/roslib": "^1.1.10",
     "@types/three": "^0.143.1",
-    "rollup": "^2.78.0",
-    "rollup-plugin-polyfill-node": "^0.10.2",
-    "rollup-plugin-terser": "^7.0.2",
-    "vite": "^3.0.9",
-    "vite-plugin-commonjs-externals": "^0.1.1"
+    "parcel": "^2.8.3"
   }
 }
