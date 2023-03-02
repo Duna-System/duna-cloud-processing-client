@@ -6,6 +6,7 @@ service ProcessPointCloud
     rpc AddOneToPoint (Point) returns (Point) {}
     rpc ComputeCentroid (PointCloud) returns (Point) {}
     rpc VoxelGrid (VoxelGridPointCloud) returns (PointCloud) {}
+    rpc SpecialFilter (Point) returns (Point) {}
 }
 
 message Color {
@@ -25,7 +26,6 @@ message Point {
 
 message PointCloud {
     repeated Point Points = 1; 
-    
 }
 
 message PointCloudRGB {

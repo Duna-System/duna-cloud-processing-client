@@ -1,7 +1,6 @@
 #!/bin/bash
 PROTO_DIR=./gen-proto
 
-
 rm -rf ./gen-proto
 mkdir ./gen-proto
 
