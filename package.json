@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "parcel",
     "build": "parcel build",
-    "envoy": "./start_envoy.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

@@ -6,3 +6,6 @@ First, setup any gRPC server with the same proto and serving the called method. 
 - npm run dev
 
 Open `localhost:1234` and watch browser console.
+
+# Docker 
+- `docker build -t marcusforte/duna-cloud-client .`

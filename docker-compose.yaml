@@ -1,0 +1,35 @@
+services:
+  envoy:
+    image: envoyproxy/envoy:v1.25-latest
+    volumes:
+    - ./envoy.yaml:/etc/envoy/envoy.yaml
+    # environment:
+    # - ENVOY_UID=$(id -u)
+    ports:
+    - 8080:8080
+    - 9901:9901
+    networks:
+     app-network:
+        ipv4_address: 10.10.10.4
+    
+  web-client:
+    image: marcusforte/duna-cloud-client # this project's image.
+    ports:
+    - 1234:1234
+    networks:
+     app-network:
+        ipv4_address: 10.10.10.3
+
+  process-server:
+    image: marcusforte/duna-cloud-processing
+    networks:
+      app-network:
+        ipv4_address: 10.10.10.2    
+
+networks:
+  app-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.10.10.0/16
+          gateway: 10.10.10.1

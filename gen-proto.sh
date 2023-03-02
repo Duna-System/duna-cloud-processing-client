@@ -1,7 +1,9 @@
 #!/bin/bash
 PROTO_DIR=./gen-proto
 
-rm -rf ./gen-proto/*
+
+rm -rf ./gen-proto
+mkdir ./gen-proto
 
 # Generate JavaScript code
 npx grpc_tools_node_protoc \
