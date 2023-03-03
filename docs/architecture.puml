@@ -24,7 +24,7 @@ end note
 ' Relations
 User -> WC: "::<port>" 
 WC <-> EP: "::5000"
-EP <-> CP: "::10001"
+EP <-> CP: "::5000"
 
 WC .. N1
 CP .. N1

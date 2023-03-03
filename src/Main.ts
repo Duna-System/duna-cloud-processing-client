@@ -2,7 +2,7 @@
 import {ProcessPointCloudClient} from "../gen-proto/PointcloudServiceClientPb";
 import { Point, PointCloud, VoxelGridPointCloud} from "../gen-proto/pointcloud_pb";
 
-const pcClient = new ProcessPointCloudClient("http://" + "0.0.0.0" + ":5000");
+const pcClient = new ProcessPointCloudClient("http://" + location.hostname + ":5000");
 
 // Test Voxel
 var voxelInputRequest = new VoxelGridPointCloud();
