@@ -5,7 +5,7 @@
   "source": "index.html",
   "scripts": {
     "dev": "parcel",
-    "build": "parcel build",
+    "build": "npm run build:proto && parcel build",
     "build:proto": "./gen-proto.sh",
     "dev:node": "nodemon src-node/Main.ts",
     "test": "echo \"Error: no test specified\" && exit 1"

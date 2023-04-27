@@ -1,39 +1,33 @@
 
 syntax = "proto3";
 
+import "google/protobuf/empty.proto";
+
 service ProcessPointCloud 
 {
     rpc AddOneToPoint (Point) returns (Point) {}
     rpc ComputeCentroid (PointCloud) returns (Point) {}
-    rpc VoxelGrid (VoxelGridPointCloud) returns (PointCloud) {}
-    rpc SpecialFilter (Point) returns (Point) {}
+    // Maybe better to return indices only.
+    rpc VoxelGrid (VoxelFilterInput) returns (PointCloud) {}
+    rpc VoxelMax (VoxelFilterInput) returns (PointCloud) {}
+    rpc CloudStream(google.protobuf.Empty) returns (stream PointCloud ) {}
+
 }
 
-message Color {
-    uint32 r = 1;
-    uint32 g = 2;
-    uint32 b = 3;
-}
 message Point {
     float x = 1;
     float y = 2;
     float z = 3;
-    int32 r = 4;
-    int32 g = 5;
-    int32 b = 6;
-    int32 i = 7;
+    uint32 r = 4;
+    uint32 g = 5;
+    uint32 b = 6;
 }
 
 message PointCloud {
     repeated Point Points = 1; 
 }
 
-message PointCloudRGB {
-    repeated Point Points = 1;
-    repeated Color RGB = 2;
-}
-
-message VoxelGridPointCloud {
+message VoxelFilterInput {
     float resolution = 1;
     PointCloud pointcloud = 2;
 }

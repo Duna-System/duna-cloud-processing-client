@@ -15,7 +15,4 @@
       "isolatedModules": true,
       "noEmit": true,
     },
-    "include": ["web", "gen-proto/*"],
-    // "exclude": ["gen-proto/*"]
-    // "references": [{ "path": "./tsconfig.node.json" }]
   }
